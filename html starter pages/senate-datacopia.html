@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+
+
+
+    </head>
+    
+    <body>
+<!--
+         <nav class="navbar navbar-inverse">
+          <div>
+            <div>
+              <a href="#">TGIF</a>
+            </div>
+            <ul >
+              <li><a href="#">Home</a></li>
+              <li >
+                <a href="#">Congress 113</a>
+                <ul >
+                  <li><a href="#">Senate</a></li>
+                  <li><a href="#">House</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>        
+-->
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">TGIF</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">HOME</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">CONGRESS 113 <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">SENATE</a></li>
+          <li><a href="#">HOUSE</a></li>
+        </ul>
+      </li>
+      <li><a href="#">ABOUT</a></li>
+      <li><a href="#">CONTACT</a></li>
+    </ul>
+  </div>
+</nav>
+  
+
+        <header>            
+            <div>
+            </div>
+        </header>
+        <!--Table container-->
+        <div>
+            <h2>Senators</h2>
+            <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+            
+            <div class="selectores">
+                <form action="" name="formulario">
+                    <input type="checkbox" id="D"  name="partido" value="D" onclick="calls() ">Democrat 
+                <input type="checkbox" id="R" name="partido" value="R" onclick="calls()">Republican 
+                <input type="checkbox" id="I" name="partido" value="I" onclick=" calls()">Independent
+                <select name="estados" id="<seleto></seletor>" onchange="calls()"><option value="All">All</option></select>
+                </form>
+            </div>
+    	    <table id="senate-data" class="table table-hover table table-condensed table-responsive">
+                <thead>
+                    <tr class="active">
+                        <th>First names</th>
+                        <th>Party</th>
+                        <th>State</th>
+                        <th>Years in Office</th>
+                        <th>%votes W/ party.</th>
+                        
+                    </tr>
+                </thead>
+              
+                
+            </table>
+    	</div>  
+<!--
+    	<script src="Script/pro-congress-113-senate.js">
+                    
+       </script>
+-->
+<!--           <script src="Script/senate-comands.js"></script>-->
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <script src="Script/Senate-comand-llamada.js"></script>
+           
+
+</body>
+</html>
