@@ -8,7 +8,7 @@ console.log(pagina)
 
 
 
-if (pagina == '/senate:house-attendance-starter-page.html' || pagina == '/senate:house-party-loyalty-starter-page.html') {
+if (pagina == '/senatehouse-attendance-starter-page.html' || pagina == '/senatehouse-party-loyalty-starter-page.html') {
 
     fetch("https://api.propublica.org/congress/v1/113/senate/members.json", {
         method: "GET",
@@ -169,7 +169,7 @@ if (pagina == '/senate:house-attendance-starter-page.html' || pagina == '/senate
     });
 
     //-----TERMINA EL IF -------------
-} else if (pagina == '/house:house-attendance-starter-page.html' || pagina == '/house:house-party-loyalty-starter-page.html') {
+} else if (pagina == '/house-attendance-starter-page.html' || pagina == '/house-party-loyalty-starter-page.html') {
 
     fetch("https://api.propublica.org/congress/v1/113/house/members.json", {
         method: "GET",
@@ -431,14 +431,13 @@ function senatetabel() {
 function maketable(menosmais, listamissed, listavotesreves, listavoteswith) {
     console.log("esta funcionando")
 
-    if (pagina == '/senate:house-party-loyalty-starter-page.html' || pagina == '/house:house-party-loyalty-starter-page.html') {
+    if (pagina == '/senatehouse-party-loyalty-starter-page.html' || pagina == '/house-party-loyalty-starter-page.html') {
         //        createtablemost(menosmais
         createtablemost(listavoteswith, 'most', 'total_votes', 'votes_with_party_pct')
         createtablemost(listavotesreves, 'least', 'total_votes', 'votes_with_party_pct')
 
-    } else if (pagina == '/senate:house-attendance-starter-page.html'|| pagina == '/house:house-attendance-starter-page.html')  {
+    } else if (pagina == '/senatehouse-attendance-starter-page.html'|| pagina == '/house-attendance-starter-page.html')  {
         createtablemost(menosmais, 'most', 'missed_votes', 'missed_votes_pct')
-        console.log(listamissed)
         createtablemost(listamissed, 'least', 'missed_votes', 'missed_votes_pct')
     }
 }

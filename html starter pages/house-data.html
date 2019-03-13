@@ -1,43 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Script/tgif.css" type="text/css">
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="Script/tgifstyle.css" type="text/css">
 
     </head>
     
     <body>
-         <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">TGIF</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">HOME</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">CONGRESS 113 <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">SENATE</a></li>
-          <li><a href="#">HOUSE</a></li>
+        <header>
+            <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="home-starter-page.html">TGIF</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="home-starter-page.html">HOME</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">CONGRESS 113 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="senate-datacopia.html">SENATE</a></li>
+                    <li class='active'><a href="house-data.html">HOUSE</a></li>
+                </ul>
+
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">PARTY LOYALTY <span class="caret"></span> </a>
+                <ul class="dropdown-menu">
+                    <li><a href="senatehouse-party-loyalty-starter-page.html">Senate</a></li>
+                    <li><a href="house-party-loyalty-starter-page.html">House</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">ATTENDANCE <span class="caret"></span> </a>
+                <ul class="dropdown-menu">
+                    <li><a href="senatehouse-attendance-starter-page.html">Senate</a></li>
+                    <li><a href="house-attendance-starter-page.html">House</a></li>
+                </ul>
+            </li>
+            <li><a href="home-starter-page.html">ABOUT</a></li>
+
         </ul>
-      </li>
-      <li><a href="#">ABOUT</a></li>
-      <li><a href="#">CONTACT</a></li>
-    </ul>
-  </div>
+    </div>
 </nav>
+        </header>
             <!--Table container-->
-        <div>     
-            <h2>Congressmen</h2>
+       <div id="vue-app">
+            <div>     
+            <div class="espaco">
+                <h2>Congressmen</h2>
             <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
             <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+            </div>
        	    <div class="selectores">
                 <form action="" name="formulario">
-                    <input type="checkbox" id="D"  name="partido" value="D" onclick="calls() ">Democrat 
-                <input type="checkbox" id="R" name="partido" value="R" onclick="calls()">Republican 
-                <input type="checkbox" id="I" name="partido" value="I" onclick=" calls()">Independent
-                <select name="estados" id="seletor" onchange="calls()"><option value="All">All</option></select>
+                    <input @click='filterMembers' type="checkbox" id="D"  name="partido" value="D" >Democrat 
+                <input @click='filterMembers' type="checkbox" id="R" name="partido" value="R">Republican 
+                <input @click='filterMembers' type="checkbox" id="I" name="partido" value="I" >Independent
+                <select @change='filterMembers'  name="estates" id="seletor" ><option value="All">All</option>
+                <option v-for='est in est1'>{{est}}</option></select>
                 </form>
             </div>
     	    <table id="senate-data" class="table table-hover table table-condensed table-responsive">
@@ -51,18 +75,25 @@
                         
                     </tr>
                 </thead>
-              
+              <tbody>
+                    <tr v-for='membro in membros'>
+                       <td><a v-bind:href="membro.url" target="_blank"> {{membro.first_name}} {{membro.middle_name}} {{membro.last_name}} </a></td>
+                       
+                       <td>{{membro.party}}</td>
+                       <td>{{membro.state}}</td>
+                       <td>{{membro.seniority}}</td>
+                       <td>{{membro.votes_with_party_pct}}</td>
+                        
+                    </tr>
+                  
+              </tbody>
                 
             </table>
     	</div>  
-<!--
-    	<script src="Script/pro-congress-113-senate.js">
-                    
-       </script>
-           <script src="Script/senate-comands.js"></script>
--->
-           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   <script src="Script/Senate-comand-llamada.js"></script>
+       </div>
+
+           
+<!--   <script src="Script/Senate-comand-llamada.js"></script>-->
+   <script src="Script/app.js"></script>
     </body>
 </html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="Script/tgifstyle.css" type="text/css">
+
+</head>
+
+<body>
+
+   
+     <header>
+          <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="home-starter-page.html">TGIF</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="home-starter-page.html">HOME</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">CONGRESS 113 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="senate-datacopia.html">SENATE</a></li>
+                    <li class='active'><a href="house-data.html">HOUSE</a></li>
+                </ul>
+
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">PARTY LOYALTY <span class="caret"></span> </a>
+                <ul class="dropdown-menu">
+                    <li><a href="senatehouse-party-loyalty-starter-page.html">Senate</a></li>
+                    <li><a href="house-party-loyalty-starter-page.html">House</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">ATTENDANCE <span class="caret"></span> </a>
+                <ul class="dropdown-menu">
+                    <li><a href="senatehouse-attendance-starter-page.html">Senate</a></li>
+                    <li><a href="house-attendance-starter-page.html">House</a></li>
+                </ul>
+            </li>
+            <li><a href="home-starter-page.html">ABOUT</a></li>
+
+        </ul>
+    </div>
+</nav>
+     </header>
+
+
+   
+    <!--Table container-->
+    <div id="vue-app">
+    <div class="divflex">
+        <div class="meuflex">
+            <div class="esquerdo">
+                <h2>Party Loyalty</h2>
+                <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda. </p>
+            </div>
+
+            <div class="direito">
+                <h2>Senate at a glance</h2>
+                <table id='senate' class="table table-hover table table-condensed table-responsive">
+                    <thead>
+                        <tr class="active">
+                            <th>Party</th>
+                            <th>Number of Reps</th>
+                            <th>% Voted with Prty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="republicinfo">
+                            <td>Republican</td>
+                        </tr>
+                        <tr id="democrtinfo">
+                            <td>Democrat</td>
+                        </tr>
+                        <tr id="independinfo">
+                            <td>Independent</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="meuflex">
+            <div class="esquerdo">
+                <h2>Least Loyal (Bottom 10% of Party)</h2>
+        <table id='least' class="table table-hover table table-condensed table-responsive">
+            <thead>
+                <tr class="active">
+                    <th>Name</th>
+                    <th>Number Party Votes</th>
+                    <th>% Party Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+            </div>
+
+        <div class="direito">
+            <h2>Most Loyal (Top 10% of Party)</h2>
+        <table id="most" class="table table-hover table table-condensed table-responsive">
+            <thead>
+                <tr class="active">
+                    <th>Name</th>
+                    <th>Number Party Votes</th>
+                    <th>% Party Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        </div>
+        
+        </div>
+
+    </div>
+   </div>
+    <script src=""></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="Script/llamadainfo.js" ></script>
+        
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+.main{
+    min-height: 750px;
+    max-height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    
+}
+
+.box1{
+     grid-column: 1/6;
+     background: #eee;
+}
