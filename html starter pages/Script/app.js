@@ -27,7 +27,7 @@ let app = new Vue({
 
     created: function () {
 
-        console.log('hola, hola'),
+       
         console.log(this.pagina)
 
             this.getData();
