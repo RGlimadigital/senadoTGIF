@@ -76,7 +76,7 @@ function miFiltro(){
 
 
 filterdouble(){
-    app.checkedBoxes.length ?  
+    app.checkedBoxes.length > 0 ?  
     this.membros = app.checkedBoxes.flatMap(p => 
         app.Fullmembers.filter(membro => membro.party == p))
     : this.membros = this.Fullmembers;
